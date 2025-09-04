@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import os
 
-import httpx
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -20,7 +19,6 @@ def main() -> None:
             "HTTP-Referer": "https://github.com/llm-tool-selection",
             "X-Title": "llm-tool-selection",
         },
-        http_client=httpx.Client(trust_env=False),
     )
     model = os.getenv("MODEL_NAME", "openai/gpt-4o-mini")
     completion = client.chat.completions.create(
