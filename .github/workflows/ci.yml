@@ -19,3 +19,8 @@ jobs:
           OPENAI_BASE_URL: https://openrouter.ai/api/v1
           MODEL_NAME: openai/gpt-4o-mini
         run: uv run examples/llm.py
+      - name: Run tests
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: https://openrouter.ai/api/v1
+        run: uv run pytest
