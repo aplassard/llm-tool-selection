@@ -342,6 +342,7 @@ dependencies = [
     { name = "openai" },
     { name = "pytest" },
     { name = "python-dotenv" },
+    { name = "pyyaml" },
 ]
 
 [package.metadata]
@@ -352,6 +353,7 @@ requires-dist = [
     { name = "openai", specifier = ">=1.106.0" },
     { name = "pytest", specifier = ">=8.2" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
+    { name = "pyyaml", specifier = ">=6.0.1" },
 ]
 
 [[package]]
