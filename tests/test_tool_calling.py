@@ -2,7 +2,8 @@ import os
 
 import pytest
 
-from llmtoolselection.agents.tool_calling import build_agent
+from llmtoolselection.agents.tool_calling import build_agent, select_weather_tool
+from llmtoolselection.cli import run_experiment
 
 
 def test_build_agent_missing_key(monkeypatch):
@@ -15,8 +16,13 @@ def test_build_agent_missing_key(monkeypatch):
         build_agent(model="openai/gpt-5-mini")
 
 
-def test_weather_tool_call():
-    agent = build_agent(model="openai/gpt-5-mini")
-    result = agent.invoke({"input": "What's the weather in Boston?"})
-    assert "boston" in result["output"].lower()
-    assert "sunny" in result["output"].lower()
+def test_select_weather_tool():
+    info = select_weather_tool(model="openai/gpt-5-mini")
+    assert info["name"].startswith("get_weather_")
+    assert info["tags"]["model"] == ["codex"]
+
+
+def test_run_experiment():
+    results = run_experiment(2, model="openai/gpt-5-mini", threads=2)
+    assert len(results) == 2
+    assert all(r["name"].startswith("get_weather_") for r in results)

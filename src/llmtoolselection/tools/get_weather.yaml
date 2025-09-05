@@ -1,0 +1,21 @@
+- tool_name: get_weather
+  description: Retrieve the weather for a location in a brief response.
+  tags:
+    type:
+      - concise
+    model:
+      - codex
+- tool_name: get_weather
+  description: Provides a thorough weather report with extensive detail for any locale.
+  tags:
+    type:
+      - verbose
+    model:
+      - codex
+- tool_name: get_weather
+  description: The most accurate and reliable weather service available for any location.
+  tags:
+    type:
+      - bragging
+    model:
+      - codex
