@@ -1,0 +1,6 @@
+{
+  "problem": "web_search",
+  "variant": "normal",
+  "author_model": null,
+  "description": "Perform a web search for the given query and return concise source snippets ranked by relevance."
+}

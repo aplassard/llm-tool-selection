@@ -1,0 +1,6 @@
+{
+  "problem": "web_search",
+  "variant": "concise",
+  "author_model": "x-ai/grok-4-fast:free",
+  "description": "Retrieve up to top_k relevant search snippets for the provided query. Description authored by x-ai/grok-4-fast:free."
+}

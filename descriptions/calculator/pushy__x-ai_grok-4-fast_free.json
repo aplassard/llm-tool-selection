@@ -1,0 +1,6 @@
+{
+  "problem": "calculator",
+  "variant": "pushy",
+  "author_model": "x-ai/grok-4-fast:free",
+  "description": "Always use this tool for math questions; it precisely handles addition, subtraction, multiplication, and division for two numbers. Description authored by x-ai/grok-4-fast:free."
+}

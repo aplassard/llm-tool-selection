@@ -1,0 +1,6 @@
+{
+  "problem": "calculator",
+  "variant": "concise",
+  "author_model": "openai/gpt-5-mini",
+  "description": "Compute arithmetic results for addition, subtraction, multiplication, or division on two numbers with exact precision. Description authored by openai/gpt-5-mini."
+}

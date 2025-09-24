@@ -1,0 +1,16 @@
+{
+  "type": "function",
+  "function": {
+    "name": "TOOL_LABEL",
+    "description": "INJECTED_BY_DESCRIPTION_FILE",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "location": { "type": "string" },
+        "unit": { "type": "string", "enum": ["celsius", "fahrenheit"], "default": "celsius" }
+      },
+      "required": ["location"],
+      "additionalProperties": false
+    }
+  }
+}

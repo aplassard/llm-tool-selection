@@ -1,0 +1,6 @@
+{
+  "problem": "web_search",
+  "variant": "normal",
+  "author_model": "x-ai/grok-4-fast:free",
+  "description": "Perform a web search for the given query and return concise source snippets ranked by relevance. Description authored by x-ai/grok-4-fast:free."
+}

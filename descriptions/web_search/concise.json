@@ -1,0 +1,6 @@
+{
+  "problem": "web_search",
+  "variant": "concise",
+  "author_model": null,
+  "description": "Retrieve up to top_k relevant search snippets for the provided query."
+}

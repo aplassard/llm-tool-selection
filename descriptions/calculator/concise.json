@@ -1,0 +1,6 @@
+{
+  "problem": "calculator",
+  "variant": "concise",
+  "author_model": null,
+  "description": "Compute arithmetic results for addition, subtraction, multiplication, or division on two numbers with exact precision."
+}
