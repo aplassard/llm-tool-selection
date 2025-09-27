@@ -1,7 +1,11 @@
 experiments:
   - id: desc_type_bias
     description: "Bias from description type"
-    models: ["openai/gpt-5-mini", "x-ai/grok-4-fast:free"]
+    models:
+      - "openai/gpt-5-mini"
+      - "x-ai/grok-4-fast:free"
+      - "google/gemini-2.5-flash"
+      - "deepseek/deepseek-chat-v3.1"
     problems: ["calculator", "web_search", "weather"]
     trials: 200
     prompt_variants:
@@ -40,11 +44,18 @@ experiments:
     description_generator:
       script: "src/gen_descriptions.py"
       variants: ["concise", "normal", "pushy"]
-      authored_by: ["openai/gpt-5-mini", "x-ai/grok-4-fast:free"]
+      authored_by:
+        - "openai/gpt-5-mini"
+        - "x-ai/grok-4-fast:free"
+        - "google/gemini-2.5-flash"
 
   - id: author_model_bias
     description: "Preference for descriptions authored by same vs other model"
-    models: ["openai/gpt-5-mini", "x-ai/grok-4-fast:free"]
+    models:
+      - "openai/gpt-5-mini"
+      - "x-ai/grok-4-fast:free"
+      - "google/gemini-2.5-flash"
+      - "deepseek/deepseek-chat-v3.1"
     problems: ["calculator"]
     trials: 300
     prompt_variants:
@@ -63,11 +74,18 @@ experiments:
     description_generator:
       script: "src/gen_descriptions.py"
       variants: ["normal"]
-      authored_by: ["openai/gpt-5-mini"]  # no author-model variant from x-ai available yet
+      authored_by:
+        - "openai/gpt-5-mini"
+        - "x-ai/grok-4-fast:free"
+        - "google/gemini-2.5-flash"
 
   - id: desc_x_model
     description: "Interaction: description type x prompting model"
-    models: ["openai/gpt-5-mini", "x-ai/grok-4-fast:free"]
+    models:
+      - "openai/gpt-5-mini"
+      - "x-ai/grok-4-fast:free"
+      - "google/gemini-2.5-flash"
+      - "deepseek/deepseek-chat-v3.1"
     problems: ["calculator", "web_search"]
     trials: 300
     prompt_variants:
@@ -96,3 +114,7 @@ experiments:
     description_generator:
       script: "src/gen_descriptions.py"
       variants: ["concise", "normal", "pushy"]
+      authored_by:
+        - "openai/gpt-5-mini"
+        - "x-ai/grok-4-fast:free"
+        - "google/gemini-2.5-flash"

@@ -8,4 +8,6 @@ dependencies = [
     "prefect>=3.0.4",
     "PyYAML>=6.0.1",
     "openai>=1.51.0",
+    "pandas>=2.2.0",
+    "statsmodels>=0.14.2",
 ]

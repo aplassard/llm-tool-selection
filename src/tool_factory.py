@@ -11,7 +11,18 @@ from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 from .gen_descriptions import DescriptionEntry, load_description, description_path
 
 CONTRACTS_ROOT = Path(__file__).resolve().parent.parent / "contracts"
-_TOOL_LABELS = ["A", "B", "C", "D", "E"]
+_TOOL_LABELS = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+]
 
 
 @dataclass(frozen=True)
