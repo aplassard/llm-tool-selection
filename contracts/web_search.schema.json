@@ -1,0 +1,16 @@
+{
+  "type": "function",
+  "function": {
+    "name": "TOOL_LABEL",
+    "description": "INJECTED_BY_DESCRIPTION_FILE",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": { "type": "string" },
+        "top_k": { "type": "integer", "minimum": 1, "default": 3 }
+      },
+      "required": ["query"],
+      "additionalProperties": false
+    }
+  }
+}

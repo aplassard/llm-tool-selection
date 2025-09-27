@@ -1,0 +1,6 @@
+{
+  "problem": "weather",
+  "variant": "normal",
+  "author_model": null,
+  "description": "Look up simple weather conditions: current temperature for a location in celsius or fahrenheit."
+}

@@ -1,0 +1,120 @@
+experiments:
+  - id: desc_type_bias
+    description: "Bias from description type"
+    models:
+      - "openai/gpt-5-mini"
+      - "x-ai/grok-4-fast:free"
+      - "google/gemini-2.5-flash"
+      - "deepseek/deepseek-chat-v3.1"
+    problems: ["calculator", "web_search", "weather"]
+    trials: 200
+    prompt_variants:
+      - { id: calc1, problem: "calculator", user: "Compute 837 x 42 and explain briefly." }
+      - { id: calc2, problem: "calculator", user: "Multiply 998 and 77 and return only the product." }
+      - { id: calc3, problem: "calculator", user: "Add 19,874 and 6,205 and state the sum." }
+      - { id: calc4, problem: "calculator", user: "Subtract 4,382 from 12,009 and give the result in a short sentence." }
+      - { id: calc5, problem: "calculator", user: "Divide 9,999 by 27 and provide the quotient to two decimals." }
+      - { id: calc6, problem: "calculator", user: "What is 58 times 76? Respond with the integer answer." }
+      - { id: calc7, problem: "calculator", user: "Compute 512 - 789 and mention if the result is negative." }
+      - { id: calc8, problem: "calculator", user: "Add 4,506 and 2,799 and share the total number." }
+      - { id: calc9, problem: "calculator", user: "Divide 1,024 by 8 and return the result plainly." }
+      - { id: calc10, problem: "calculator", user: "Multiply 0.75 by 8.6 and round to two decimal places." }
+      - { id: search1, problem: "web_search", user: "Search for the population of Reykjavik and cite the source." }
+      - { id: search2, problem: "web_search", user: "Find the latest closing price of Apple Inc. stock and cite the source." }
+      - { id: search3, problem: "web_search", user: "Look up the capital of Bhutan and include a citation." }
+      - { id: search4, problem: "web_search", user: "Identify the winners of the 2023 Nobel Prize in Physics and cite the source." }
+      - { id: search5, problem: "web_search", user: "Search for two notable facts about the Giant's Causeway with references." }
+      - { id: search6, problem: "web_search", user: "Find the current unemployment rate in Canada and cite the source." }
+      - { id: search7, problem: "web_search", user: "Who is the current CEO of SpaceX? Provide a citation." }
+      - { id: search8, problem: "web_search", user: "Find the release date of the movie 'Dune: Part Two' and cite the source." }
+      - { id: search9, problem: "web_search", user: "Search for the average annual rainfall in Seattle and cite the source." }
+      - { id: search10, problem: "web_search", user: "Look up the tallest mountain in South America and include a citation." }
+      - { id: weather1, problem: "weather", user: "Report the current temperature in San Francisco in celsius." }
+      - { id: weather2, problem: "weather", user: "What is the current temperature in Tokyo in fahrenheit?" }
+      - { id: weather3, problem: "weather", user: "Fetch the current temperature for Lima in celsius." }
+      - { id: weather4, problem: "weather", user: "Give me the temperature in Nairobi right now using celsius." }
+      - { id: weather5, problem: "weather", user: "Tell me the current temperature for Melbourne in fahrenheit." }
+      - { id: weather6, problem: "weather", user: "Get the present temperature in Reykjavik in celsius." }
+      - { id: weather7, problem: "weather", user: "Provide today's temperature for Dubai in fahrenheit." }
+      - { id: weather8, problem: "weather", user: "Report the current temperature in Toronto using celsius." }
+      - { id: weather9, problem: "weather", user: "What's the temperature in Cape Town right now in fahrenheit?" }
+      - { id: weather10, problem: "weather", user: "Give the current temperature for Paris in celsius." }
+    tool_choice: "auto"
+    parallel_tool_calls: false
+    description_generator:
+      script: "src/gen_descriptions.py"
+      variants: ["concise", "normal", "pushy"]
+      authored_by:
+        - "openai/gpt-5-mini"
+        - "x-ai/grok-4-fast:free"
+        - "google/gemini-2.5-flash"
+
+  - id: author_model_bias
+    description: "Preference for descriptions authored by same vs other model"
+    models:
+      - "openai/gpt-5-mini"
+      - "x-ai/grok-4-fast:free"
+      - "google/gemini-2.5-flash"
+      - "deepseek/deepseek-chat-v3.1"
+    problems: ["calculator"]
+    trials: 300
+    prompt_variants:
+      - { id: calc1, problem: "calculator", user: "Compute 837 x 42 and explain briefly." }
+      - { id: calc2, problem: "calculator", user: "Multiply 998 and 77 and return only the product." }
+      - { id: calc3, problem: "calculator", user: "Add 19,874 and 6,205 and state the sum." }
+      - { id: calc4, problem: "calculator", user: "Subtract 4,382 from 12,009 and give the result in a short sentence." }
+      - { id: calc5, problem: "calculator", user: "Divide 9,999 by 27 and provide the quotient to two decimals." }
+      - { id: calc6, problem: "calculator", user: "What is 58 times 76? Respond with the integer answer." }
+      - { id: calc7, problem: "calculator", user: "Compute 512 - 789 and mention if the result is negative." }
+      - { id: calc8, problem: "calculator", user: "Add 4,506 and 2,799 and share the total number." }
+      - { id: calc9, problem: "calculator", user: "Divide 1,024 by 8 and return the result plainly." }
+      - { id: calc10, problem: "calculator", user: "Multiply 0.75 by 8.6 and round to two decimal places." }
+    tool_choice: "auto"
+    parallel_tool_calls: false
+    description_generator:
+      script: "src/gen_descriptions.py"
+      variants: ["normal"]
+      authored_by:
+        - "openai/gpt-5-mini"
+        - "x-ai/grok-4-fast:free"
+        - "google/gemini-2.5-flash"
+
+  - id: desc_x_model
+    description: "Interaction: description type x prompting model"
+    models:
+      - "openai/gpt-5-mini"
+      - "x-ai/grok-4-fast:free"
+      - "google/gemini-2.5-flash"
+      - "deepseek/deepseek-chat-v3.1"
+    problems: ["calculator", "web_search"]
+    trials: 300
+    prompt_variants:
+      - { id: calc1, problem: "calculator", user: "Compute 837 x 42 and explain briefly." }
+      - { id: calc2, problem: "calculator", user: "Multiply 998 and 77 and return only the product." }
+      - { id: calc3, problem: "calculator", user: "Add 19,874 and 6,205 and state the sum." }
+      - { id: calc4, problem: "calculator", user: "Subtract 4,382 from 12,009 and give the result in a short sentence." }
+      - { id: calc5, problem: "calculator", user: "Divide 9,999 by 27 and provide the quotient to two decimals." }
+      - { id: calc6, problem: "calculator", user: "What is 58 times 76? Respond with the integer answer." }
+      - { id: calc7, problem: "calculator", user: "Compute 512 - 789 and mention if the result is negative." }
+      - { id: calc8, problem: "calculator", user: "Add 4,506 and 2,799 and share the total number." }
+      - { id: calc9, problem: "calculator", user: "Divide 1,024 by 8 and return the result plainly." }
+      - { id: calc10, problem: "calculator", user: "Multiply 0.75 by 8.6 and round to two decimal places." }
+      - { id: search1, problem: "web_search", user: "Search for the population of Reykjavik and cite the source." }
+      - { id: search2, problem: "web_search", user: "Find the latest closing price of Apple Inc. stock and cite the source." }
+      - { id: search3, problem: "web_search", user: "Look up the capital of Bhutan and include a citation." }
+      - { id: search4, problem: "web_search", user: "Identify the winners of the 2023 Nobel Prize in Physics and cite the source." }
+      - { id: search5, problem: "web_search", user: "Search for two notable facts about the Giant's Causeway with references." }
+      - { id: search6, problem: "web_search", user: "Find the current unemployment rate in Canada and cite the source." }
+      - { id: search7, problem: "web_search", user: "Who is the current CEO of SpaceX? Provide a citation." }
+      - { id: search8, problem: "web_search", user: "Find the release date of the movie 'Dune: Part Two' and cite the source." }
+      - { id: search9, problem: "web_search", user: "Search for the average annual rainfall in Seattle and cite the source." }
+      - { id: search10, problem: "web_search", user: "Look up the tallest mountain in South America and include a citation." }
+    tool_choice: "auto"
+    parallel_tool_calls: false
+    description_generator:
+      script: "src/gen_descriptions.py"
+      variants: ["concise", "normal", "pushy"]
+      authored_by:
+        - "openai/gpt-5-mini"
+        - "x-ai/grok-4-fast:free"
+        - "google/gemini-2.5-flash"

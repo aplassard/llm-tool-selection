@@ -1,0 +1,6 @@
+{
+  "problem": "weather",
+  "variant": "concise",
+  "author_model": null,
+  "description": "Return the current temperature for a location in the requested unit."
+}

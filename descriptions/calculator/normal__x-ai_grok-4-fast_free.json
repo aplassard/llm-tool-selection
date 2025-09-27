@@ -1,0 +1,6 @@
+{
+  "problem": "calculator",
+  "variant": "normal",
+  "author_model": "x-ai/grok-4-fast:free",
+  "description": "Perform arithmetic (+, -, *, /) on two numeric inputs and return the exact numeric answer. Description authored by x-ai/grok-4-fast:free."
+}

@@ -1,0 +1,6 @@
+{
+  "problem": "calculator",
+  "variant": "concise",
+  "author_model": "x-ai/grok-4-fast:free",
+  "description": "Compute arithmetic results for addition, subtraction, multiplication, or division on two numbers with exact precision. Description authored by x-ai/grok-4-fast:free."
+}

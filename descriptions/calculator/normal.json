@@ -1,0 +1,6 @@
+{
+  "problem": "calculator",
+  "variant": "normal",
+  "author_model": null,
+  "description": "Perform arithmetic (+, -, *, /) on two numeric inputs and return the exact numeric answer."
+}

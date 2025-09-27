@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "TOOL_LABEL",
+    "description": "INJECTED_BY_DESCRIPTION_FILE",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "operand1": { "type": "number" },
+        "operand2": { "type": "number" },
+        "operation": { "type": "string", "enum": ["+", "-", "*", "/"] }
+      },
+      "required": ["operand1", "operand2", "operation"],
+      "additionalProperties": false
+    }
+  }
+}

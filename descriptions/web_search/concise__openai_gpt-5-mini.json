@@ -1,0 +1,6 @@
+{
+  "problem": "web_search",
+  "variant": "concise",
+  "author_model": "openai/gpt-5-mini",
+  "description": "Retrieve up to top_k relevant search snippets for the provided query. Description authored by openai/gpt-5-mini."
+}
