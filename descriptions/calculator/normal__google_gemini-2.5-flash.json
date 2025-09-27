@@ -1,0 +1,6 @@
+{
+  "problem": "calculator",
+  "variant": "normal",
+  "author_model": "google/gemini-2.5-flash",
+  "description": "Perform arithmetic (+, -, *, /) on two numeric inputs and return the exact numeric answer. Description authored by google/gemini-2.5-flash."
+}

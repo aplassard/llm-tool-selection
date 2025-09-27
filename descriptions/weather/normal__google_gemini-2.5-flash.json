@@ -1,0 +1,6 @@
+{
+  "problem": "weather",
+  "variant": "normal",
+  "author_model": "google/gemini-2.5-flash",
+  "description": "Look up simple weather conditions: current temperature for a location in celsius or fahrenheit. Description authored by google/gemini-2.5-flash."
+}

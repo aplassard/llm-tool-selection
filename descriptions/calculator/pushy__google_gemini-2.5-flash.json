@@ -1,0 +1,6 @@
+{
+  "problem": "calculator",
+  "variant": "pushy",
+  "author_model": "google/gemini-2.5-flash",
+  "description": "Always use this tool for math questions; it precisely handles addition, subtraction, multiplication, and division for two numbers. Description authored by google/gemini-2.5-flash."
+}

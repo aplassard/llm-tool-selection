@@ -1,0 +1,6 @@
+{
+  "problem": "calculator",
+  "variant": "concise",
+  "author_model": "google/gemini-2.5-flash",
+  "description": "Compute arithmetic results for addition, subtraction, multiplication, or division on two numbers with exact precision. Description authored by google/gemini-2.5-flash."
+}

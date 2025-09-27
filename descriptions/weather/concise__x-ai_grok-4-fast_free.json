@@ -1,0 +1,6 @@
+{
+  "problem": "weather",
+  "variant": "concise",
+  "author_model": "x-ai/grok-4-fast:free",
+  "description": "Return the current temperature for a location in the requested unit. Description authored by x-ai/grok-4-fast:free."
+}

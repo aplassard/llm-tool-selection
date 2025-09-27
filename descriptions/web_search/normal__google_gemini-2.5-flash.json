@@ -1,0 +1,6 @@
+{
+  "problem": "web_search",
+  "variant": "normal",
+  "author_model": "google/gemini-2.5-flash",
+  "description": "Perform a web search for the given query and return concise source snippets ranked by relevance. Description authored by google/gemini-2.5-flash."
+}

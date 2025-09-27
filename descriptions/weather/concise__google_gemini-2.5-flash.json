@@ -1,0 +1,6 @@
+{
+  "problem": "weather",
+  "variant": "concise",
+  "author_model": "google/gemini-2.5-flash",
+  "description": "Return the current temperature for a location in the requested unit. Description authored by google/gemini-2.5-flash."
+}
